@@ -17,8 +17,6 @@ namespace TaskFlow.DTOs.Tasks
 
         [Required]
         public Guid ProjectId { get; set; }
-
-        //[Required]
         public Guid? AssignedToUserId { get; set; }
 
         public TaskPriority TaskPriority { get; set; }

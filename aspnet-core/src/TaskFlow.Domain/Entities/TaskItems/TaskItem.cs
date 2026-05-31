@@ -26,6 +26,7 @@ namespace TaskFlow.Entities.TaskItems
                 string title,
                 string description,
                 TaskPriority taskPriority,
+                TaskItemStatus taskStatus,
                 DateTime? dueDate)
                 : base(id)
             {
@@ -33,6 +34,7 @@ namespace TaskFlow.Entities.TaskItems
                 Title = title;
                 Description = description;
                 TaskPriority = taskPriority;
+                TaskStatus = taskStatus;
                 DueDate = dueDate;
             }
 

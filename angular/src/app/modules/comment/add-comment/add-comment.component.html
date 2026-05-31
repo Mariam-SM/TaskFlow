@@ -1,1 +1,44 @@
-<p>add-comment works!</p>
+<div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-semibold">Add Comment</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+
+      <div class="modal-body pt-3" [formGroup]="commentForm">
+        <div class="mb-3">
+          <label class="form-label text-muted small">Task ID</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Task ID..."
+            formControlName="taskId"/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted small">Comment</label>
+          <textarea
+            class="form-control"
+            rows="4"
+            placeholder="Write your comment..."
+            formControlName="content">
+          </textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-light px-4"
+          (click)="onClose()" [disabled]="isLoading">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary px-4"
+          (click)="onSubmit()" [disabled]="isLoading || commentForm.invalid">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+          Add Comment
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

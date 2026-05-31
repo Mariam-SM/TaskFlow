@@ -1,1 +1,73 @@
-<p>add-task-item works!</p>
+<div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 shadow">
+
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-semibold">New Task</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+
+      <div class="modal-body pt-3" [formGroup]="form">
+        <div class="row g-3">
+
+          <div class="col-12">
+            <label class="form-label text-muted small">Title <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" placeholder="Task title..." formControlName="title"/>
+            <div *ngIf="form.get('title')?.invalid && form.get('title')?.touched"
+                 class="text-danger small mt-1">Title is required.</div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label text-muted small">Description</label>
+            <textarea class="form-control" rows="3"
+                      placeholder="Task description..."
+                      formControlName="description"></textarea>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label text-muted small">Project <span class="text-danger">*</span></label>
+            <select class="form-select" formControlName="projectId">
+              <option value="">Select a project...</option>
+              <option *ngFor="let p of projects" [value]="p.id">{{ p.name }}</option>
+            </select>
+            <div *ngIf="form.get('projectId')?.invalid && form.get('projectId')?.touched"
+                 class="text-danger small mt-1">Project is required.</div>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label text-muted small">Due Date</label>
+            <input type="date" class="form-control" formControlName="dueDate"/>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label text-muted small">Priority</label>
+            <select class="form-select" formControlName="taskPriority">
+              <option *ngFor="let p of priorityOptions" [ngValue]="p.value">{{ p.key }}</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label text-muted small">Status</label>
+            <select class="form-select" formControlName="taskStatus">
+              <option *ngFor="let s of statusOptions" [ngValue]="s.value">{{ s.key }}</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer border-0 pt-0">
+        <button type="button" class="btn btn-light px-4"
+                (click)="onClose()" [disabled]="isLoading">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary px-4"
+                (click)="onSubmit()" [disabled]="isLoading || form.invalid">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+          Create Task
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

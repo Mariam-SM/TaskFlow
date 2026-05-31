@@ -44,6 +44,7 @@ namespace TaskFlow.IServices
                 input.Title,
                 input.Description,
                 input.TaskPriority,
+                input.TaskStatus,
                 input.DueDate
             );
 

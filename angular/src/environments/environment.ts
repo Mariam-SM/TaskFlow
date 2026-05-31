@@ -10,12 +10,12 @@ export const environment = {
     logoUrl: '',
   },
   oAuthConfig: {
-    issuer: 'https://localhost:44332',
+    issuer: 'https://localhost:44332/',
     redirectUri: baseUrl,
     clientId: 'TaskFlow_App',
     responseType: 'code',
     scope: 'openid profile email offline_access TaskFlow',
-    requireHttps: true,
+    requireHttps: false,
   },
   apis: {
     default: {

@@ -67,6 +67,7 @@ namespace TaskFlow.Data
                 "First Demo Task",
                 "This is a seeded task for testing",
                 TaskPriority.Medium,
+                TaskItemStatus.Todo,
                 _clock.Now.AddDays(7)
             );
 

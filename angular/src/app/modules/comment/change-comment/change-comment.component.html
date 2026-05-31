@@ -1,1 +1,47 @@
-<p>change-comment works!</p>
+<!-- Modal Backdrop -->
+<div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow">
+
+      <!-- Header -->
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-semibold">Edit Comment</h5>
+        <button type="button" class="btn-close" (click)="onClose()"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body pt-3">
+        <div class="mb-3">
+          <label class="form-label text-muted small">Comment</label>
+          <textarea
+            class="form-control"
+            rows="4"
+            placeholder="Write your comment..."
+            [(ngModel)]="form.content"
+            [disabled]="isLoading">
+          </textarea>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="modal-footer border-0 pt-0">
+        <button
+          type="button"
+          class="btn btn-light px-4"
+          (click)="onClose()"
+          [disabled]="isLoading">
+          Cancel
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary px-4"
+          (click)="onSubmit()"
+          [disabled]="isLoading || !form.content.trim()">
+          <span *ngIf="isLoading" class="spinner-border spinner-border-sm me-2"></span>
+          Save Changes
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
