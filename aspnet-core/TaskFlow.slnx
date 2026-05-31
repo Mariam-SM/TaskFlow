@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TaskFlow.Application.Contracts/TaskFlow.Application.Contracts.csproj" />
+    <Project Path="src/TaskFlow.Application/TaskFlow.Application.csproj" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <Project Path="src/TaskFlow.DbMigrator/TaskFlow.DbMigrator.csproj" />
+    <Project Path="src/TaskFlow.Domain.Shared/TaskFlow.Domain.Shared.csproj" />
+    <Project Path="src/TaskFlow.Domain/TaskFlow.Domain.csproj" />
+    <Project Path="src/TaskFlow.EntityFrameworkCore/TaskFlow.EntityFrameworkCore.csproj" />
+    <Project Path="src/TaskFlow.HttpApi.Client/TaskFlow.HttpApi.Client.csproj" />
+    
+    <Project Path="src/TaskFlow.HttpApi.Host/TaskFlow.HttpApi.Host.csproj" />
+    <Project Path="src/TaskFlow.HttpApi/TaskFlow.HttpApi.csproj" />
+    
+    
+    
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/TaskFlow.Application.Tests/TaskFlow.Application.Tests.csproj" />
+    <Project Path="test/TaskFlow.Domain.Tests/TaskFlow.Domain.Tests.csproj" />
+    <Project Path="test/TaskFlow.EntityFrameworkCore.Tests/TaskFlow.EntityFrameworkCore.Tests.csproj" />
+    <Project Path="test/TaskFlow.HttpApi.Client.ConsoleTestApp/TaskFlow.HttpApi.Client.ConsoleTestApp.csproj" />
+    
+    <Project Path="test/TaskFlow.TestBase/TaskFlow.TestBase.csproj" />
+    
+  </Folder>
+</Solution>
