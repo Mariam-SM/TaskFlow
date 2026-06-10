@@ -21,25 +21,10 @@ namespace TaskFlow.Services
         ,
        IProjectAppService
     {
-        //private readonly TaskFlowApplicationMappers _mapper;
         public ProjectAppService(IRepository<Project, Guid> repository)
             : base(repository)
         {
-            //_mapper = mapper;
         }
 
-        //protected override ProjectDto MapToGetOutputDto(Project entity)
-        //=> _mapper.ToDto(entity);
-
-        //protected override Project MapToEntity(CreateProjectDto createInput)
-        //    => _mapper.ToEntity(createInput);
-        //protected override void MapToEntity(UpdateProjectDto updateInput, Project entity)
-        //{
-        //    entity.Name = updateInput.Name;
-        //    entity.Description = updateInput.Description;
-        //    entity.Status = updateInput.Status;
-        //    entity.StartDate = updateInput.StartDate;
-        //    entity.EndDate = updateInput.EndDate;
-        //}
     }
 }

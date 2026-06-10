@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using TaskFlow.Entities.Comments;
 using TaskFlow.Entities.Projects;
 using TaskFlow.Enums;
+using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace TaskFlow.Entities.TaskItems
 {
-    public class TaskItem : FullAuditedEntity<Guid>
+    public class TaskItem : FullAuditedEntity<Guid>,
+        IHasConcurrencyStamp
+
     {
         public string Title { get; set; }
         public string Description { get; set; }
@@ -19,6 +22,8 @@ namespace TaskFlow.Entities.TaskItems
         public DateTime? DueDate { get; set; }
         public bool IsCompleted { get; set; }
         public ICollection<Comment> Comments { get; set; }
+        public string ConcurrencyStamp { get; set; }= Guid.NewGuid().ToString("N");
+        public string EmbeddingSerialized { get; set; }
 
         public TaskItem(
                 Guid id,

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using TaskFlow.Enums;
+using Volo.Abp.Domain.Entities;
 
 namespace TaskFlow.DTOs.Tasks
 {
-    public class UpdateTaskDto
+    public class UpdateTaskDto : IHasConcurrencyStamp
     {
         [Required]
         [MaxLength(256)]
@@ -20,5 +21,6 @@ namespace TaskFlow.DTOs.Tasks
         public TaskItemStatus TaskStatus { get; set; }
         public DateTime DueDate { get; set; }
         public bool IsCompleted { get; set; }
+        public string ConcurrencyStamp { get; set; }
     }
 }

@@ -17,5 +17,6 @@ namespace TaskFlow.IServices
         Task<TaskDto> UpdateAsync(Guid id, UpdateTaskDto input);
         Task DeleteAsync(Guid id);
         Task<TaskDto> CompleteAsync(Guid id);
+        Task<TaskSummaryDto> SummarizeOverdueTasksAsync();
     }
 }
